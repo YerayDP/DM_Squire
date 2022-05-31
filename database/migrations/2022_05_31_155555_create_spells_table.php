@@ -26,6 +26,8 @@ class CreateSpellsTable extends Migration
             $table->string('spellDMG');
             $table->string('spellAHL');
             $table->string('spellList');
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 
@@ -36,6 +38,6 @@ class CreateSpellsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('spell__p_js');
+        Schema::dropIfExists('spells');
     }
 }
