@@ -22,7 +22,7 @@
               page. However, you can choose any other skin. Make sure you
               apply the skin class to the body tag so the changes take effect.
         -->
-    <link href="{{ asset('/bower_components/dist/css/skins/skin-blue.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/bower_components/dist/css/skins/skin-black.min.css')}}" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,14 +32,15 @@
         <![endif]-->
 </head>
 
-<body class="skin-blue">
+<body class="skin-black">
     <div class="wrapper">
 
         <!-- Main Header -->
         <header class="main-header">
 
             <!-- Logo -->
-            <a href="admin" class="logo"><b>ALMA</b>GEST</a>
+            <a href="admin" class="logo"><b>DM SQUIRE</b></a>
+            
 
             <!-- Header Navbar -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -51,111 +52,20 @@
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
-                        <li class="dropdown messages-menu">
-                            <!-- Menu toggle button -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-envelope-o"></i>
-                                <span class="label label-success">4</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 4 messages</li>
-                                <li>
-                                    <!-- inner menu: contains the messages -->
-                                    <ul class="menu">
-                                        <li>
-                                            <!-- start message -->
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <!-- User Image -->
-                                                    <img src="{{ asset('/bower_components/dist/img/admin.jpg') }}" class="img-circle" alt="User Image" />
-                                                </div>
-                                                <!-- Message title and timestamp -->
-                                                <h4>
-                                                    Support Team
-                                                    <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                                </h4>
-                                                <!-- The message -->
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li><!-- end message -->
-                                    </ul><!-- /.menu -->
-                                </li>
-                                <li class="footer"><a href="#">See All Messages</a></li>
-                            </ul>
-                        </li><!-- /.messages-menu -->
-
-                        <!-- Notifications Menu -->
-                        <li class="dropdown notifications-menu">
-                            <!-- Menu toggle button -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-bell-o"></i>
-                                <span class="label label-warning">10</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 10 notifications</li>
-                                <li>
-                                    <!-- Inner Menu: contains the notifications -->
-                                    <ul class="menu">
-                                        <li>
-                                            <!-- start notification -->
-                                            <a href="#">
-                                                <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                            </a>
-                                        </li><!-- end notification -->
-                                    </ul>
-                                </li>
-                                <li class="footer"><a href="#">View all</a></li>
-                            </ul>
-                        </li>
-                        <!-- Tasks Menu -->
-                        <li class="dropdown tasks-menu">
-                            <!-- Menu Toggle Button -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-flag-o"></i>
-                                <span class="label label-danger">9</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 9 tasks</li>
-                                <li>
-                                    <!-- Inner menu: contains the tasks -->
-                                    <ul class="menu">
-                                        <li>
-                                            <!-- Task item -->
-                                            <a href="#">
-                                                <!-- Task title and progress text -->
-                                                <h3>
-                                                    Design some buttons
-                                                    <small class="pull-right">20%</small>
-                                                </h3>
-                                                <!-- The progress bar -->
-                                                <div class="progress xs">
-                                                    <!-- Change the css width attribute to simulate progress -->
-                                                    <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">20% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                    </ul>
-                                </li>
-                                <li class="footer">
-                                    <a href="#">View all tasks</a>
-                                </li>
-                            </ul>
-                        </li>
+                        
                         <!-- User Account Menu -->
                         <li class="dropdown user user-menu">
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                <img src="{{ asset('/bower_components/dist/img/admin.jpg') }}" class="user-image" alt="User Image" />
+                                <img src="{{ asset('/bower_components/dist/img/userman.jpg') }}" class="user-image" alt="User Image" />
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                 
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="{{ asset('/bower_components/dist/img/admin.jpg') }}" class="img-circle" alt="User Image" />
+                                    <img src="{{ asset('/bower_components/dist/img/userman.jpg') }}" class="img-circle" alt="User Image" />
                                     <p>
                                        
                                         <small>Member since Nov. 2012</small>
@@ -202,12 +112,12 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="{{ asset('/bower_components/dist/img/admin.jpg') }}" class="img-circle" alt="User Image" />
+                        <img src="{{ asset('/bower_components/dist/img/userman.jpg') }}" class="img-circle" alt="User Image" />
                     </div>
                     <div class="pull-left info">
                         
                         <!-- Status -->
-                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                        <a href="#"><i class="fa fa-circle text-success"></i> Ready to play!</a>
                     </div>
                 </div>
 
@@ -236,10 +146,12 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <section class="content-header">
+            </br>
+            <section class="content-header" style="text-align:center;">
                 <h1>
-                    Control de AlmaGest
-                    <small>Administración</small>
+                    Gestor de personajes
+                    </br>
+                    <small>DND 5e</small>
                 </h1>
                 <ol class="breadcrumb">
 
@@ -262,7 +174,7 @@
 
             </div>
             <!-- Default to the left -->
-            <strong>Copyright © 2015 <a href="#">Company</a>.</strong> All rights reserved.
+            
         </footer>
 
     </div><!-- ./wrapper -->
