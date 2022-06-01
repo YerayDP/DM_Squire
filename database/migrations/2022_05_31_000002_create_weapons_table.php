@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventListsTable extends Migration
+class CreateWeaponsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateEventListsTable extends Migration
      */
     public function up()
     {
-        Schema::create('event__lists', function (Blueprint $table) {
+        Schema::create('weapons', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('properties');
+            $table->string('DMG');
+            $table->string('weight');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateEventListsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('event__lists');
+        Schema::dropIfExists('weapons');
     }
 }
