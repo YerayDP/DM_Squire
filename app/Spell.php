@@ -12,4 +12,7 @@ class Spell extends Model
         'name','school', 'level', 'casting_time','range','components', 
         'duration', 'description', 'spellDMG', 'spellAHL', 'spellList'
     ];
+    public function Spell_PJ(){
+        return $this->hasMany('App\Spell_PJ');
+    }
 }

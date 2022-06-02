@@ -15,6 +15,16 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('archetype')->nullable();
+            $table->string('hitdice');
+            $table->string('armor_prof');
+            $table->string('weapon_prof');
+            $table->string('tools_prof')->nullable();
+            $table->string('ST_prof');
+            $table->text('skills_prof');
+            $table->text('SE_prof');
+            $table->text('traits')->nullable();
             $table->timestamps();
         });
     }

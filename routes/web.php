@@ -12,11 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return Redirect::to('login');
 });
-Route::get('/admin', function () {
-    return view('admin_template');
+Route::get('/login', function () {
+    return Redirect::to('login');
 });
 
 Auth::routes();
 
+Route::get('/admin', 'UsersController@index')->name('admin');
+Route::get('/userPanel', 'UsersController@userP')->name('user');
+Auth::routes();
+
+Route::get('/logout', function(){
+    Auth::logout();
+    return Redirect::to('login');
+ })->name('logout');

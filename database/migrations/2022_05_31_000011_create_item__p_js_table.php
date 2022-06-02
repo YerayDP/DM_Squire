@@ -15,6 +15,10 @@ class CreateItemPJsTable extends Migration
     {
         Schema::create('items_PJ', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('items_id');
+            $table->foreign('items_id')->references('id')->on('items')->onUpdate("cascade");
+            $table->unsignedBigInteger('PJ_id');
+            $table->foreign('PJ_id')->references('id')->on('PJ')->onUpdate("cascade");
             $table->timestamps();
         });
     }

@@ -15,6 +15,10 @@ class CreateSpellPJsTable extends Migration
     {
         Schema::create('spells_PJ', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('spells_id');
+            $table->foreign('spells_id')->references('id')->on('spells')->onUpdate("cascade");
+            $table->unsignedBigInteger('PJ_id');
+            $table->foreign('PJ_id')->references('id')->on('PJ')->onUpdate("cascade");
             $table->timestamps();
         });
     }

@@ -10,9 +10,8 @@ class Category extends Model
 //SE = Start Equipment
 //ST = Saving Throws
     protected $fillable = [
-        'name','archetype', 'hitdice','armor_prof','weapon_prof', 'armor_prof'
-        ,'tools_prof','ST_prof', 'skills_prof'
-        ,'SE_prof','armor_prof', 'armor_prof', 'traits'
+        'name','archetype', 'hitdice','armor_prof','weapon_prof','tools_prof','ST_prof', 'skills_prof'
+        ,'SE_prof','traits'
     ];
     public function PJ(){
         return $this->hasMany('App\PJ');
