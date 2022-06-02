@@ -28,3 +28,5 @@ Route::get('/logout', function(){
     Auth::logout();
     return Redirect::to('login');
  })->name('logout');
+
+Route::resource('admin','UsersController');

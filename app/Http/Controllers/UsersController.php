@@ -26,7 +26,7 @@ class UsersController extends Controller
         $users = User::where('deleted', '<>', '1')
             ->get();
         
-        return view('admin.index',compact('users'));
+        return view('admin_template');
     }
 
     /**

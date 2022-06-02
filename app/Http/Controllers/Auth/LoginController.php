@@ -29,10 +29,10 @@ class LoginController extends Controller
   {
     $user = Auth::user();
 
-    if ($user->actived == '1' && $user->isadmin == '1') {
+    if ($user->actived == '1' && $user->type == 'a') {
       return redirect ('/admin');
-    } else if ($user->actived == '1' && $user->isadmin == '0'){
-      return redirect ('/userPanel');
+    } else if ($user->actived == '1' && $user->type == 'u'){
+      return redirect ('/admin');
     }
     else{
       return redirect('/login') ;

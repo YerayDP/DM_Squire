@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('email_confirmed')->default(0);
             $table->string('code')->nullable(); // confirmation_code
             $table->tinyInteger('actived')->default(0);
-            $table->tinyInteger('isadmin')->default(0);
+            $table->string('type')->default('u');
             $table->tinyInteger('deleted')->default(0);
             $table->rememberToken();
             $table->softDeletes();
