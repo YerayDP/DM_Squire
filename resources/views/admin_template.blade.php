@@ -136,7 +136,14 @@
                 <ul class="sidebar-menu">
                     <li class="header">MENÚ</li>
                     <!-- Optionally, you can add icons to the links -->
-                    
+                    <li><a href="{{ route('background.index') }}"><span>Background</span></a></li>
+                    <li><a href="{{ route('categories.index') }}"><span>Categories</span></a></li>
+                    <li><a href="{{ route('items.index') }}"><span>Items</span></a></li>
+                    <li><a href="{{ route('races.index') }}"><span>Races</span></a></li>
+                    <li><a href="{{ route('PJs.index') }}"><span>PJ</span></a></li>
+                    <li><a href="{{ route('spells.index') }}"><span>Spells</span></a></li>
+                    <li><a href="{{ route('users.index') }}"><span>Users</span></a></li>
+                    <li><a href="{{ route('weapons.index') }}"><span>Weapons</span></a></li>
                     
                 </ul><!-- /.sidebar-menu -->
             </section>

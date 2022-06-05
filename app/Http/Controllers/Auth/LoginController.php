@@ -31,8 +31,6 @@ class LoginController extends Controller
 
     if ($user->actived == '1' && $user->type == 'a') {
       return redirect ('/admin');
-    } else if ($user->actived == '1' && $user->type == 'u'){
-      return redirect ('/admin');
     }
     else{
       return redirect('/login') ;

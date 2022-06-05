@@ -19,6 +19,7 @@ class CreateWeaponsTable extends Migration
             $table->string('properties');
             $table->string('DMG');
             $table->string('weight');
+            $table->string('type');
             $table->timestamps();
         });
     }

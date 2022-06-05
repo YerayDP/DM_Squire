@@ -16,11 +16,12 @@ class CreateBackgroundsTable extends Migration
         Schema::create('backgrounds', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('skills_prof');
+            $table->string('skills_prof')->nullable();
             $table->string('tools_prof')->nullable();
-            $table->string('languajes');
-            $table->string('SE_prof');
+            $table->string('languajes')->nullable();;
+            $table->text('SE_prof')->nullable();;
             $table->text('traits');
+          
             $table->timestamps();
         });
     }

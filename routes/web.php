@@ -21,12 +21,22 @@ Route::get('/login', function () {
 Auth::routes();
 
 Route::get('/admin', 'UsersController@index')->name('admin');
-Route::get('/userPanel', 'UsersController@userP')->name('user');
-Auth::routes();
 
 Route::get('/logout', function(){
     Auth::logout();
     return Redirect::to('login');
  })->name('logout');
 
-Route::resource('admin','UsersController');
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('admin','UsersController');
+    Route::resource('races', 'RacesController');
+    Route::resource('background', 'BackgroundController');
+    Route::resource('categories', 'CategoryController');
+    Route::resource('spells', 'SpellController');
+    Route::resource('items', 'ItemController');
+    Route::resource('weapons', 'WeaponController');
+    Route::resource('users', 'UserController');
+    Route::resource('PJs', 'PJController');
+
+ });

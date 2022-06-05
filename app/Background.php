@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Background extends Model
 {
-    protected $table = 'background';
+    protected $table = 'backgrounds';
     //SE = Start Equipment
     //ST = Saving Throws
     protected $fillable = [

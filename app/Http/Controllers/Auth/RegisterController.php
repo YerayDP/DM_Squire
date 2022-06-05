@@ -68,7 +68,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        $data['code'] = Str::random(25);
+        
         $user = User::create([
             'firstname' => $data['firstname'],
             'secondname' => $data['secondname'],
@@ -77,9 +77,6 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'code' => $data['code'],
         ]);
-
-        Mail::send('confirmation_code', $data, function($message) use ($data) { $message->to($data['email'],
-             $data['firstname'])->subject('Por favor confirma tu correo'); });
 
         return $user;
     }

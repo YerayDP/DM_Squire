@@ -117,10 +117,7 @@ class UsersController extends Controller
         return redirect()->action([UsersController::class, 'index']);
     }
 
-    public function userP(){
-       
-        return view('users.userPanel');
-    }
+   
     
     
 }

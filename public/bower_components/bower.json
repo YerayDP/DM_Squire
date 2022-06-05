@@ -30,5 +30,8 @@
     "bower_components",
     "composer.json",
     "documentaion"
-  ]
+  ],
+  "dependencies": {
+    "select2": "~4.0"
+  }
 }
