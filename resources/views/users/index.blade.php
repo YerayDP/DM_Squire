@@ -6,7 +6,7 @@
 <div class="card uper" style="min-height: 1669.19px">
 
     <div class="card-header">
-        <h3 class="card-title">Articulos</h3>
+        <h3 class="card-title">Usuarios</h3>
     </div>
 
     <div class="card-body">
