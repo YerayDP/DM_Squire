@@ -31,7 +31,6 @@ class UsersController extends Controller
    public function create()
    {
     $users = User::all();
-   
     return view('users.create',compact('users'));
    }
 
@@ -44,8 +43,11 @@ class UsersController extends Controller
    public function store(Request $request)
    {
     
-    
+    $this->validate($request,[ 'name'=>'required', 'firstname'=>'required' ,'secondname'=>'required', 
+    'email' => 'nullable','phone'=>'required','password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
+    'password_confirmation' => 'min:6']);
     User::create($request->all());
+   
     return redirect('users')->with('status', 'User created!');
    }
 
@@ -70,7 +72,7 @@ class UsersController extends Controller
    {
        
     $users = User::find($id);
-    return view('users.edit',compact('users','N'));
+    return view('users.edit',compact('users'));
    }
 
    /**
@@ -98,14 +100,14 @@ class UsersController extends Controller
     public function destroy($id)
     {
         User::destroy($id);
-        return redirect('users')->with('status', 'Usert deleted!');
+        return redirect('users')->with('status', 'User deleted!');
     }
     public function activate($id)
     {
         $users = User::find($id);
         $users->actived = '1';
         $users->save();
-        return redirect()->action([UsersController::class, 'index']);
+        return redirect('users')->with('status', 'User activated!');
     }
 
     public function deactivate($id)
@@ -113,7 +115,7 @@ class UsersController extends Controller
         $users = User::find($id);
         $users->actived = '0';
         $users->save();
-        return redirect()->action([UsersController::class, 'index']);
+        return redirect('users')->with('status', 'User deactivated!');
     }
 
    

@@ -38,7 +38,7 @@
                 </tr>
             </thead>
             <tbody>
-                @forelse($users as $user)
+            @forelse($users as $user)
                     <tr>
                         <td>{{ $user->id }}</td>
                         <td>{{ $user->firstname }}</td>
@@ -57,14 +57,30 @@
                   <button class="btn btn-danger" type="submit" onclick="return confirm('¿Está seguro?')">Delete</button>
                 </form>
             </td>
-                    </tr>
-                @empty
+                @if($user->actived=='0')
+                <td>
+                    <form action="{{ route('activar', $user->id)}}" method="POST">
+                    {{csrf_field()}}
+                    {!! method_field('post') !!}
+                        <button class="btn btn-primary" type="submit">Activar</button>
+                    </form>
+                    </td>
+                    @else
+                    <td>
+                    <form action="{{ route('desactivar', $user->id)}}" method="POST">
+                    {{csrf_field()}}
+                    <button class="btn btn-primary" type="submit">Desactivar</button>
+                    </form>
+                    </td>
+                @endif
+            </tr>
+                
+            @endforeach
                 </br>
                 </br>
-                <div class="alert alert-danger">
-                    {{__("No users in the database")}}
-                </div>
-                @endforelse
+                
+                
+    
             </tbody>
         </table>
 

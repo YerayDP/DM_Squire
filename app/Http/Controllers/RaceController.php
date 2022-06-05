@@ -50,7 +50,7 @@ class RaceController extends Controller
    
  
     $this->validate($request,[ 'name'=>'required','ASI'=> 'required','speed' => 'required'
-    ,'traits' => 'required','proficencies' => 'required','languajes' => 'required']);
+    ,'traits' => 'nullable','proficencies' => 'nullable','languajes' => 'required']);
    
     Race::create($request->all());
     return redirect('races')->with('status', 'Race created!');

@@ -40,3 +40,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('PJs', 'PJController');
 
  });
+
+ 
+Route::post('user/activate/{id}', 'UsersController@activate')->name('activar');
+Route::post('user/deactivate/{id}','UsersController@deactivate')->name('desactivar');

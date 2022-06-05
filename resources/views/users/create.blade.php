@@ -34,20 +34,19 @@
 </br>
             
                 
-                <label for="name">Name:</label>
-				<input type="text" name="name" id="name" class="form-control select2 input-sm" value="{{ old('name') }}">
+               
 
-                <label for="tools_prof">First Name:</label>
-				<input type="text" name="tools_prof" id="tools_prof" class="form-control select2 input-sm" value="{{ old('tools_prof') }}">
+                <label for="firstname">First Name:</label>
+				<input type="text" name="firstname" id="firstname" class="form-control select2 input-sm" value="{{ old('firstname') }}">
 
 				
-                <label for="SE_prof">Second Name:</label>
-				    <input type="text" name="SE_prof" id="SE_prof" class="form-control select2 input-sm" value="{{ old('SE_prof') }}">
-                <label for="languajes">Email:</label>
-				    <input type="text" name="languajes" id="languajes" class="form-control select2 input-sm" value="{{ old('languajes') }}">
+                <label for="secondname">Second Name:</label>
+				    <input type="text" name="secondname" id="secondname" class="form-control select2 input-sm" value="{{ old('secondname') }}">
+                <label for="email">Email:</label>
+				    <input type="text" name="email" id="email" class="form-control select2 input-sm" value="{{ old('email') }}">
 
-                <label for="traits">Phone:</label>
-				    <input type="text" name="traits" id="traits" class="form-control select2 input-sm" value="{{ old('traits') }}">
+                <label for="phone">Phone:</label>
+				    <input type="text" name="phone" id="phone" class="form-control select2 input-sm" value="{{ old('phone') }}">
 					
 					
             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
