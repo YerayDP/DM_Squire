@@ -30,7 +30,7 @@ Route::get('/logout', function(){
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('admin','UsersController');
-    Route::resource('races', 'RacesController');
+    Route::resource('races', 'RaceController');
     Route::resource('background', 'BackgroundController');
     Route::resource('categories', 'CategoryController');
     Route::resource('spells', 'SpellController');

@@ -38,11 +38,11 @@
 				<input type="text" name="name" id="name" class="form-control select2 input-sm" value="{{ old('name') }}">
 
                 <label for="weight">Weight:</label>
-				<input type="number" name="weight" id="weight" class="form-control select2 input-sm" value="{{ old('weight') }}" min="1"default="1">
+				<input type="number" name="weight" id="weight" class="form-control select2 input-sm" value="1" min="1">
 				
                 
                 <label for="AC">Armor Class:</label>
-				    <input type="number" name="AC" id="AC" class="form-control select2 input-sm" min="0" value="{{ old('AC') }}"default="0">
+				    <input type="number" name="AC" id="AC" class="form-control select2 input-sm" min="0" value="0">
 			
 </div>
 			

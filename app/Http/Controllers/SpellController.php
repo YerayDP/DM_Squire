@@ -50,10 +50,13 @@ class SpellController extends Controller
     $NAHL = (string)$request['NAHL'];
     $DAHL = (string)$request['DAHL']; 
     $request['spellAHL'] = $NAHL.$DAHL;
-    $request['weight'] = $request['range'].'ft';
-    $request['spellList'] = implode(',', $request->spellList);
+    $request['range'] = $request['range'].'ft';
+    if($request['spellList']!=null){
+        $request['spellList'] = implode(',', $request->spellList);
+    }
+    
  
-    $this->validate($request,[ 'name'=>'required', 'weight'=>'required' ,'school'=>'required', 
+    $this->validate($request,[ 'name'=>'required' ,'school'=>'required', 
     'spellDMG' => 'required','spellAHL' => 'required','spellList' => 'required','level'=> 'required', 'casting_time'=> 'required','range' => 'required'
     ,'components' => 'required','duration' => 'required','description' => 'required']);
    
