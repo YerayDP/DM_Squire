@@ -9,7 +9,7 @@
 <div class="card uper">
 	<div class="card-header">
         <h1>
-		Create Background
+		Create User
     </h1>
 	</div>
 	<div class="card-body">
@@ -22,11 +22,11 @@
 			</ul>
 		</div><br />
 		@endif
-		<form method="POST" action="{{ route('background.store') }}">
+		<form method="POST" action="{{ route('users.store') }}">
             {{csrf_field()}}
 
 			<div class="col-sm-4">
-            <a href="{{ route('background.index')}}" class="btn bg-navy">Back</a>
+            <a href="{{ route('users.index')}}" class="btn bg-navy">Back</a>
 			<button type="submit" class="btn btn-success">Create</button>
             
 </br>
@@ -37,51 +37,36 @@
                 <label for="name">Name:</label>
 				<input type="text" name="name" id="name" class="form-control select2 input-sm" value="{{ old('name') }}">
 
-                <label for="tools_prof">Tools Proficencies:</label>
+                <label for="tools_prof">First Name:</label>
 				<input type="text" name="tools_prof" id="tools_prof" class="form-control select2 input-sm" value="{{ old('tools_prof') }}">
 
 				
-                <label for="SE_prof">Starting Equipment:</label>
+                <label for="SE_prof">Second Name:</label>
 				    <input type="text" name="SE_prof" id="SE_prof" class="form-control select2 input-sm" value="{{ old('SE_prof') }}">
-                <label for="languajes">Languaje:</label>
+                <label for="languajes">Email:</label>
 				    <input type="text" name="languajes" id="languajes" class="form-control select2 input-sm" value="{{ old('languajes') }}">
 
-                <label for="traits">Traits:</label>
+                <label for="traits">Phone:</label>
 				    <input type="text" name="traits" id="traits" class="form-control select2 input-sm" value="{{ old('traits') }}">
-			
+					
+					
+            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+            
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+               
+            
+        
+
+        
+            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+           
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+        
 </div>
 
-<div class="col-sm-8">
-                    <h4>Skill Proficencies</h4>
-            <div class="col-xs-7">
-				<label for="skills_prof">Options:   <sub>    Press control to select multiple values</sub></label>
-				
-				<select id="skills_prof" class="form-control select2-container step2-select" id="skills_prof" name="skills_prof[]" multiple size = 8>
-					<option value="Acrobatics">Acrobatics</option>
-					<option value="Animal Handling">Animal Handling</option>
-					<option value="Arcana">Arcana</option>
-					<option value="Athletics">Athletics</option>
-					<option value="Deception">Deception</option>
-					<option value="History">History</option>
-                    <option value="Insight">Insight</option>
-                    <option value="Intimidation">Intimidation</option>
-                    <option value="Investigation">Investigation</option>
-                    <option value="Medicine">Medicine</option>
-                    <option value="Nature">Nature</option>
-                    <option value="Perception">Perception</option>
-                    <option value="Performance">Performance</option>
-                    <option value="Persuasion">Persuasion</option>
-                    <option value="Religion">Religion</option>
-                    <option value="Sleight of Hand">Sleight of Hand</option>
-                    <option value="Stealth">Stealth</option>
-                    <option value="Survival">Survival</option>
-				</select>
-                </div>
-            </div>
-            
-            </div>
-			
-            
            
 		</form>
 	</div>

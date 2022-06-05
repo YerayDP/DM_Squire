@@ -70,6 +70,10 @@
 					<option value="I2">Intelligence+2</option>
 					<option value="W2">Wisdom+2</option>
 					<option value="C2">Charisma+2</option>
+					<option value="1R1">1 Random+1</option>
+					<option value="2R1">2 Random+1</option>
+					<option value="1R2">1 Random+2</option>
+					<option value="2R2">2 Random+2</option>
 				</select>
 </br>
 				

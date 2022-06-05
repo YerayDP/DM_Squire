@@ -36,7 +36,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('spells', 'SpellController');
     Route::resource('items', 'ItemController');
     Route::resource('weapons', 'WeaponController');
-    Route::resource('users', 'UserController');
+    Route::resource('users', 'UsersController');
     Route::resource('PJs', 'PJController');
 
  });

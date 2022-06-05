@@ -2,105 +2,104 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\User;
-
-
+use Illuminate\Http\Request;
+use Stevebauman\Location\Facades\Location;
 
 class UsersController extends Controller
 {
-
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $users = User::where('deleted', '<>', '1')
+    * Show the form for creating a new resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    
+   public function index()
+   {
+    $users = User::where('deleted', '<>', '1')
             ->get();
-        
-        return view('admin_template');
-    }
+           
+           
+    return view('users.index',compact('users'));
+   }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+   /**
+    * Show the form for creating a new resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
+   public function create()
+   {
+    $users = User::all();
+   
+    return view('users.create',compact('users'));
+   }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+   /**
+    * Store a newly created resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @return \Illuminate\Http\Response
+    */
+   public function store(Request $request)
+   {
+    
+    
+    User::create($request->all());
+    return redirect('users')->with('status', 'User created!');
+   }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+   /**
+    * Display the specified resource.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+   public function show($id)
+   {
+       //
+   }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        
-        $user = User::find($id);
-        return view('admin.edit', compact('user'));
-    }
+   /**
+    * Show the form for editing the specified resource.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+   public function edit($id)
+   {
+       
+    $users = User::find($id);
+    return view('users.edit',compact('users','N'));
+   }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        user::find($id)->update($request->all());
-        return redirect()->action([UsersController::class, 'index']);
-    }
+   /**
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+   public function update(Request $request, $id)
+   {
+    
+    User::find($id)->update($request->all());
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    return redirect('users')->with('status', 'User updated!');
+   }
+
+   /**
+    * Remove the specified resource from storage.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+   
     public function destroy($id)
     {
-        $users = User::find($id);
-        $users->deleted = '1';
-        $users->save();
-        return redirect()->action([UsersController::class, 'index']);
+        User::destroy($id);
+        return redirect('users')->with('status', 'Usert deleted!');
     }
-
     public function activate($id)
     {
         $users = User::find($id);

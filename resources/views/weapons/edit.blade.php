@@ -42,7 +42,7 @@
 				<input type="text" name="properties" id="properties" class="form-control select2 input-sm" value="{{ $weapons->properties }}">
 
                 <label for="weight">Weight:</label>
-				<input type="number" name="weight" id="weight" class="form-control select2 input-sm" value="{{ $weapons->weight }}" min="1">
+				<input type="number" name="weight" id="weight" class="form-control select2 input-sm" value="{{ $weapons->weight }}" min="0">
 			
 </div>
 

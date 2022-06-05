@@ -28,9 +28,9 @@
                     <td>ID</td>
                     <td>Name</td>
                     <td>Speed</td>
-                    <td>Ability Score Increase</td>
-                    <td>Proficencies</td>
+                    <td>Ability Score Increase</td>              
                     <td>Languajes</td>
+                    <td>Proficencies</td>
                     <td>Traits</td>
                     <td colspan="4">Actions</td>
                 </tr>

@@ -18,7 +18,7 @@
 
         <div class="pull-left">
             <div class="btn-group">
-                <a href="{{ route('background.create') }}" class="btn btn-info">Add background</a>
+                <a href="{{ route('users.create') }}" class="btn btn-info">Add user</a>
             </div>
         </div>
 
@@ -26,30 +26,32 @@
             <thead>
                 <tr>
                     <td>ID</td>
-                    <td>Name</td>
-                    <td>Skill Proficencies</td>
-                    <td>Tools Proficencies</td>
-                    <td>Languajes</td>
-                    <td>Equipment Proficencies</td>
-                    <td>Traits</td>
+                    <td>First Name</td>
+                    <td>Second Name</td>
+                    <td>Email</td>
+                    <td>Phone</td>
+                   
+                    <td>Actived</td>
+                    <td>Deleted</td>
+                    <td>Type</td>
                     <td colspan="4">Actions</td>
                 </tr>
             </thead>
             <tbody>
-                @forelse($backgrounds as $background)
+                @forelse($users as $user)
                     <tr>
-                        <td>{{ $background->id }}</td>
-                        <td>{{ $background->name }}</td>
-                        <td>{{ $background->skills_prof }}</td>
-                        <td>{{ $background->tools_prof }}</td>
-                        <td>{{ $background->languajes }}</td>
-                        <td>{{ $background->SE_prof }}</td>
-                        <td>{{ $background->traits }}</td>
-                        
-                        <td><a href="{{ route('background.edit',$background->id)}}" class="btn btn-primary">Edit</a></td>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->firstname }}</td>
+                        <td>{{ $user->secondname }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->phone }}</td>
+                        <td>{{ $user->actived }}</td>
+                        <td>{{ $user->deleted }}</td>
+                        <td>{{ $user->type }}</td>
+                        <td><a href="{{ route('users.edit',$user->id)}}" class="btn btn-primary">Edit</a></td>
                         <td>
 
-                <form action="{{ route('background.destroy', $background->id)}}" method="POST">
+                <form action="{{ route('users.destroy', $user->id)}}" method="POST">
                     {{csrf_field()}}
                     {!! method_field('delete') !!}
                   <button class="btn btn-danger" type="submit" onclick="return confirm('¿Está seguro?')">Delete</button>
@@ -60,7 +62,7 @@
                 </br>
                 </br>
                 <div class="alert alert-danger">
-                    {{__("No Backgrounds in the database")}}
+                    {{__("No users in the database")}}
                 </div>
                 @endforelse
             </tbody>
