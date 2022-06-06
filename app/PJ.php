@@ -11,7 +11,7 @@ class PJ extends Model
     protected $fillable = [
         'name','user_id','category_id', 'level', 'race_id','background_id','alignment', 
         'inspiration', 'STR', 'DEX', 'CON', 'INTE', 
-        'WIS', 'CHARI', 'AC', 'proficency','spells_slots','spells_known','spells_ready'
+        'WIS', 'CHARI'
     ];
     public function user(){
         return $this->belongsTo('App\User','user_id');

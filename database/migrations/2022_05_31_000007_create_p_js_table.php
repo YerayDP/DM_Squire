@@ -15,20 +15,16 @@ class CreatePJsTable extends Migration
     {
         Schema::create('PJ', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('level');
+            $table->string('name');
+            $table->integer('level')->default('1');
             $table->string('alignment');
-            $table->boolean('inspiration');
-            $table->integer('STR');
-            $table->integer('DEX');
-            $table->integer('CON');
-            $table->integer('INTE');
-            $table->integer('WIS');
-            $table->integer('CHARI');
-            $table->integer('AC');
-            $table->string('proficency');
-            $table->string('spells_slots')->nullable();
-            $table->string('spells_known')->nullable();
-            $table->string('spells_ready')->nullable();
+            $table->boolean('inspiration')->default('0');
+            $table->integer('STR')->default('0');
+            $table->integer('DEX')->default('0');
+            $table->integer('CON')->default('0');
+            $table->integer('INTE')->default('0');
+            $table->integer('WIS')->default('0');
+            $table->integer('CHARI')->default('0');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate("cascade");
             $table->unsignedBigInteger('category_id');

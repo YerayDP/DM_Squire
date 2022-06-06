@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
          'spellDMG' => '4d4', 'spellAHL' => '1d4', 'spellList' => 'WIZARD,CIRCLE OF THE LAND (SWAMP), ALCHEMIST'],);
         factory(\App\User::class)->create(['firstname' => 'Yeray', 'secondname' => 'Dominguez Pavón', 
         'email' => 'y@admin.com','password' => Hash::make('12345678'), 'actived' 
-        => '1', 'type' => 'a', 'phone'=>'110919999']);
+        => '1', 'type' => 'a']);
          
     }
 }

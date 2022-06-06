@@ -18,7 +18,7 @@
 
         <div class="pull-left">
             <div class="btn-group">
-                <a href="{{ route('background.create') }}" class="btn btn-info">Add background</a>
+                <a href="{{ route('PJs.create') }}" class="btn btn-info">Add PJ</a>
             </div>
         </div>
 
@@ -27,29 +27,45 @@
                 <tr>
                     <td>ID</td>
                     <td>Name</td>
-                    <td>Skill Proficencies</td>
-                    <td>Tools Proficencies</td>
-                    <td>Languajes</td>
-                    <td>Equipment Proficencies</td>
-                    <td>Traits</td>
+                    <td>Level</td>
+                    <td>Alignment</td>
+                    <td>Inspiration</td>
+                    <td>STR</td>
+                    <td>DEX</td>
+                    <td>CON</td>
+                    <td>INTE</td>
+                    <td>WIS</td>
+                    <td>CHARI</td>
+                    <td>User Mail</td>
+                    <td>Category Name</td>
+                    <td>Race Name</td>
+                    <td>Background Name</td>
                     <td colspan="4">Actions</td>
                 </tr>
             </thead>
             <tbody>
-                @forelse($backgrounds as $background)
+                @forelse($PJs as $PJ)
                     <tr>
-                        <td>{{ $background->id }}</td>
-                        <td>{{ $background->name }}</td>
-                        <td>{{ $background->skills_prof }}</td>
-                        <td>{{ $background->tools_prof }}</td>
-                        <td>{{ $background->languajes }}</td>
-                        <td>{{ $background->SE_prof }}</td>
-                        <td>{{ $background->traits }}</td>
+                        <td>{{ $PJ->id }}</td>
+                        <td>{{ $PJ->name }}</td>
+                        <td>{{ $PJ->level }}</td>
+                        <td>{{ $PJ->alignment }}</td>
+                        <td>{{ $PJ->inspiration }}</td>
+                        <td>{{ $PJ->STR }}</td>
+                        <td>{{ $PJ->DEX }}</td>
+                        <td>{{ $PJ->CON }}</td>
+                        <td>{{ $PJ->INTE }}</td>
+                        <td>{{ $PJ->WIS }}</td>
+                        <td>{{ $PJ->CHARI }}</td>
+                        <td>{{ $PJ->user->email}}</td>
+                        <td>{{ $PJ->category->name}}</td>
+                        <td>{{ $PJ->race->name }}</td>
+                        <td>{{ $PJ->background->name }}</td>
                         
-                        <td><a href="{{ route('background.edit',$background->id)}}" class="btn btn-primary">Edit</a></td>
+                        <td><a href="{{ route('PJs.edit',$PJ->id)}}" class="btn btn-primary">Edit</a></td>
                         <td>
 
-                <form action="{{ route('background.destroy', $background->id)}}" method="POST">
+                <form action="{{ route('PJs.destroy', $PJ->id)}}" method="POST">
                     {{csrf_field()}}
                     {!! method_field('delete') !!}
                   <button class="btn btn-danger" type="submit" onclick="return confirm('¿Está seguro?')">Delete</button>
