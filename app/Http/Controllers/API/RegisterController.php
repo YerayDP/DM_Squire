@@ -47,7 +47,7 @@ class RegisterController extends Controller
             $user = Auth::user();
         
             $success['token'] = $user->createToken('authToken')->accessToken;
-
+            $success['actived'] = $user->actived;
             return response()->json(['success' => $success], $this->successStatus);
         }
         else {
