@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('register', 'API\RegisterController@register');
 Route::post('login', 'API\RegisterController@login');
 Route::get('spells', 'API\FiltroAPIController@spellGlobalList');
+Route::get('weapons', 'API\FiltroAPIController@weaponGlobalList');
