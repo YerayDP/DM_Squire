@@ -38,9 +38,13 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('weapons', 'WeaponController');
     Route::resource('users', 'UsersController');
     Route::resource('PJs', 'PJController');
-
+    Route::resource('event', 'EventController');
+    Route::resource('event_list', 'EventListController');
+    Route::resource('item_list', 'ItemPJController');
+    Route::resource('spell_list', 'SpellPJController');
+    Route::resource('weapon_list', 'WeaponPJController');
+    Route::post('user/activate/{id}', 'UsersController@activate')->name('activar');
+    Route::post('user/deactivate/{id}','UsersController@deactivate')->name('desactivar');
  });
 
  
-Route::post('user/activate/{id}', 'UsersController@activate')->name('activar');
-Route::post('user/deactivate/{id}','UsersController@deactivate')->name('desactivar');

@@ -43,8 +43,8 @@ class UsersController extends Controller
    public function store(Request $request)
    {
     
-    $this->validate($request,[ 'name'=>'required', 'firstname'=>'required' ,'secondname'=>'required', 
-    'email' => 'nullable','phone'=>'required','password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
+    $this->validate($request,['firstname'=>'required' ,'secondname'=>'required', 
+    'email' => 'nullable','password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
     'password_confirmation' => 'min:6']);
     User::create($request->all());
    

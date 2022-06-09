@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class PJ extends Model
 {
     protected $table = 'PJ';
-
+   
     protected $fillable = [
         'name','user_id','category_id', 'level', 'race_id','background_id','alignment', 
         'inspiration', 'STR', 'DEX', 'CON', 'INTE', 
@@ -34,4 +34,5 @@ class PJ extends Model
     public function Weapon_PJ(){
         return $this->hasMany('App\Weapon_PJ');
     }
+    
 }

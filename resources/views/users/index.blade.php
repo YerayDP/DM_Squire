@@ -6,7 +6,7 @@
 <div class="card uper" style="min-height: 1669.19px">
 
     <div class="card-header">
-        <h3 class="card-title">Usuarios</h3>
+        <h3 class="card-title">Users</h3>
     </div>
 
     <div class="card-body">
@@ -62,14 +62,14 @@
                     <form action="{{ route('activar', $user->id)}}" method="POST">
                     {{csrf_field()}}
                     {!! method_field('post') !!}
-                        <button class="btn btn-primary" type="submit">Activar</button>
+                        <button class="btn btn-primary" type="submit">Activate</button>
                     </form>
                     </td>
                     @else
                     <td>
                     <form action="{{ route('desactivar', $user->id)}}" method="POST">
                     {{csrf_field()}}
-                    <button class="btn btn-primary" type="submit">Desactivar</button>
+                    <button class="btn btn-primary" type="submit">Deactivate</button>
                     </form>
                     </td>
                 @endif

@@ -45,10 +45,7 @@ class RegisterController extends Controller
         
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
             $user = Auth::user();
-        
-            $success['token'] = $user->createToken('authToken')->accessToken;
-            $success['actived'] = $user->actived;
-            return response()->json(['success' => $success], $this->successStatus);
+            return response()->json(['success' => $user], $this->successStatus);
         }
         else {
             return response()->json(['error' => 'No estás autorizado'], 401);

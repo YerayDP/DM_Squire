@@ -15,6 +15,12 @@ class CreateEventListsTable extends Migration
     {
         Schema::create('event__lists', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('event_id');
+            $table->foreign('event_id')->references('id')->on('events')->onUpdate("cascade");
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate("cascade");
+            $table->integer('rate');
+            $table->string('commentary');
             $table->timestamps();
         });
     }

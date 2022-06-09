@@ -6,7 +6,7 @@
 <div class="card uper" style="min-height: 1669.19px">
 
     <div class="card-header">
-        <h3 class="card-title">Backgrounds</h3>
+        <h3 class="card-title">Events</h3>
     </div>
 
     <div class="card-body">
@@ -18,7 +18,7 @@
 
         <div class="pull-left">
             <div class="btn-group">
-                <a href="{{ route('background.create') }}" class="btn btn-info">Add background</a>
+                <a href="{{ route('event.create') }}" class="btn btn-info">Add event</a>
             </div>
         </div>
 
@@ -27,29 +27,25 @@
                 <tr>
                     <td>ID</td>
                     <td>Name</td>
-                    <td>Skill Proficencies</td>
-                    <td>Tools Proficencies</td>
-                    <td>Languajes</td>
-                    <td>Equipment Proficencies</td>
-                    <td>Traits</td>
+                    <td>Event Info</td>
+                    <td>Event Starting date</td>
+                    <td>Event Ending date</td>
                     <td colspan="4">Actions</td>
                 </tr>
             </thead>
             <tbody>
-                @forelse($backgrounds as $background)
+                @forelse($events as $event)
                     <tr>
-                        <td>{{ $background->id }}</td>
-                        <td>{{ $background->name }}</td>
-                        <td>{{ $background->skills_prof }}</td>
-                        <td>{{ $background->tools_prof }}</td>
-                        <td>{{ $background->languajes }}</td>
-                        <td>{{ $background->SE_prof }}</td>
-                        <td>{{ $background->traits }}</td>
+                        <td>{{ $event->id }}</td>
+                        <td>{{ $event->name }}</td>
+                        <td>{{ $event->info }}</td>
+                        <td>{{ date('d-m-Y', strtotime($event->date_start)) }}</td>
+                        <td>{{ date('d-m-Y', strtotime($event->date_end)) }}</td>
                         
-                        <td><a href="{{ route('background.edit',$background->id)}}" class="btn btn-primary">Edit</a></td>
+                        <td><a href="{{ route('event.edit',$event->id)}}" class="btn btn-primary">Edit</a></td>
                         <td>
 
-                <form action="{{ route('background.destroy', $background->id)}}" method="POST">
+                <form action="{{ route('event.destroy', $event->id)}}" method="POST">
                     {{csrf_field()}}
                     {!! method_field('delete') !!}
                   <button class="btn btn-danger" type="submit" onclick="return confirm('¿Está seguro?')">Delete</button>
@@ -60,7 +56,7 @@
                 </br>
                 </br>
                 <div class="alert alert-danger">
-                    {{__("No Backgrounds in the database")}}
+                    {{__("No events in the database")}}
                 </div>
                 @endforelse
             </tbody>

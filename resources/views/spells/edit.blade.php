@@ -33,7 +33,7 @@
 </br>
 </br>
 </br>
-<input type="hidden" name="spellDMG" id="spellDMG" class="form-control select2 input-sm" value="{{ $spells->spellDMG }}">	
+			<input type="hidden" name="spellDMG" id="spellDMG" class="form-control select2 input-sm" value="{{ $spells->spellDMG }}">	
 			<input type="hidden" name="spellAHL" id="spellAHL" class="form-control select2 input-sm" value="{{ $spells->spellAHL }}">	
 			
 			<input type="hidden" name="components" id="components" class="form-control select2 input-sm" value="{{$spells->id}}">

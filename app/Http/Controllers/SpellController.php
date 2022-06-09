@@ -106,6 +106,8 @@ class SpellController extends Controller
     */
    public function update(Request $request, $id)
    {
+    $M=implode(',',$request['componentsT']);
+    $request['components'] = $M.'('.$request['Cdescription'].')';
     $N = (string)$request['N'];
     $D = (string)$request['D']; 
     $request['spellDMG'] = $N.$D;
@@ -113,8 +115,9 @@ class SpellController extends Controller
     $DAHL = (string)$request['DAHL']; 
     $request['spellAHL'] = $NAHL.$DAHL;
     $request['range'] = $request['range'].'ft';
-    Spell::find($id)->update($request->all());
-
+    if($request['spellList']!=null){
+        $request['spellList'] = implode(',', $request->spellList);
+    }
     return redirect('spells')->with('status', 'Spell updated!');
    }
 

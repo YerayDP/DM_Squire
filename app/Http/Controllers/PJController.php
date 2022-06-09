@@ -95,11 +95,12 @@ class PJController extends Controller
     $N = $PJs -> ASI;
     $N=explode(',',$N);
     $N=$N[0];
-    $w = explode('f',$PJs['speed']);
-    $w=$w[0];
-    $PJs['speed']=$w[0];
+    $users = User::all();
+    $backgrounds = Background::all();
+    $categories = Category::all();
+    $races = Race::all();
 
-    return view('PJs.edit',compact('PJs','N','w'));
+    return view('PJs.edit',compact('PJs','N','users','backgrounds','categories','races'));
    }
 
    /**

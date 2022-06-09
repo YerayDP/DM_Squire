@@ -46,8 +46,7 @@
                 <label for="email">Email:</label>
 				    <input type="text" name="email" id="email" class="form-control select2 input-sm" value="{{ $users->email }}">
 
-                <label for="phone">Phone:</label>
-				    <input type="text" name="phone" id="phone" class="form-control select2 input-sm" value="{{ $users->phone }}">
+           
 					
 					
             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>

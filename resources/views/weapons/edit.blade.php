@@ -20,11 +20,11 @@
 				<li>{{ $error }}</li>
 				@endforeach
 			</ul>
-		</div><br /> {{csrf_field()}}
-            {!! method_field('put') !!}
+		</div><br /> 
 		@endif
 		<form method="POST" action="{{ route('weapons.update', $weapons->id) }}">
-           
+		{{csrf_field()}}
+            {!! method_field('put') !!}
 		<div class="row">
 			<div class="col-sm-4">
             <a href="{{ route('weapons.index')}}" class="btn bg-navy">Back</a>

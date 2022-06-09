@@ -35,7 +35,7 @@
 </br>
 			
                 <label for="name">Name:</label>
-				<input type="text" name="name" id="name" class="form-control select2 input-sm"value="{{ $races->id }}">
+				<input type="text" name="name" id="name" class="form-control select2 input-sm"value="{{ $races->name }}">
                 <label for="speed">Speed:</label>
 				<input type="number" name="speed" id="speed" class="form-control select2 input-sm" value="{{$w}}" min="1">
 
