@@ -4,6 +4,8 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    
+
     "require": {
         "php": "^7.3|^8.0",
         "fideloper/proxy": "~3.3",
@@ -14,6 +16,7 @@
         "paragonie/random_compat": "2.*",
         "stevebauman/location": "^6.5"
     },
+    
     "require-dev": {
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
@@ -51,6 +54,10 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
+        ],
+        "post-install-cmd": [
+            "php artisan clear-compiled",
+            "chmod -R 777 public/"
         ]
     },
     "config": {

@@ -16,7 +16,6 @@ class RegisterController extends Controller
         $validator = Validator::make($request->all(), [
             'firstname' => 'required',
             'secondname' => 'required',
-            'company_id' => 'required',
             'email' => 'required|email',
             'password' =>'required',
         ]);
@@ -33,7 +32,6 @@ class RegisterController extends Controller
         $success['token'] = $user->createToken('authToken')->accessToken;
         $success['firstname'] = $user->firstname;
         $success['secondname'] = $user->secondname;
-        $success['company_id'] = $user->company_id;
         $success['email'] = $user->email;
         $success['password'] = $user->password;
 
