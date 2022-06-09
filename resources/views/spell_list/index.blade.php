@@ -6,7 +6,7 @@
 <div class="card uper" style="min-height: 1669.19px">
 
     <div class="card-header">
-        <h3 class="card-title">Events</h3>
+        <h3 class="card-title">Spell List</h3>
     </div>
 
     <div class="card-body">
@@ -18,7 +18,7 @@
 
         <div class="pull-left">
             <div class="btn-group">
-                <a href="{{ route('event.create') }}" class="btn btn-info">Add event</a>
+                <a href="{{ route('spell_list.create') }}" class="btn btn-info">Add Spell List</a>
             </div>
         </div>
 
@@ -26,26 +26,22 @@
             <thead>
                 <tr>
                     <td>ID</td>
-                    <td>Name</td>
-                    <td>Event Info</td>
-                    <td>Event Starting date</td>
-                    <td>Event Ending date</td>
+                    <td>PJ Name</td>
+                    <td>Spell Name</td>
                     <td colspan="4">Actions</td>
                 </tr>
             </thead>
             <tbody>
-                @forelse($events as $event)
+                @forelse($spell_list as $spell_lists)
                     <tr>
-                        <td>{{ $event->id }}</td>
-                        <td>{{ $event->name }}</td>
-                        <td>{{ $event->info }}</td>
-                        <td>{{ date('d-m-Y', strtotime($event->date_start)) }}</td>
-                        <td>{{ date('d-m-Y', strtotime($event->date_end)) }}</td>
+                        <td>{{ $spell_lists->id }}</td>
+                        <td>{{ $spell_lists->PJ->name }}</td>
+                        <td>{{ $spell_lists->spells->name }}</td>
                         
-                        <td><a href="{{ route('event.edit',$event->id)}}" class="btn btn-primary">Edit</a></td>
+                        <td><a href="{{ route('spell_list.edit',$spell_lists->id)}}" class="btn btn-primary">Edit</a></td>
                         <td>
 
-                <form action="{{ route('event.destroy', $event->id)}}" method="POST">
+                <form action="{{ route('spell_list.destroy', $spell_lists->id)}}" method="POST">
                     {{csrf_field()}}
                     {!! method_field('delete') !!}
                   <button class="btn btn-danger" type="submit" onclick="return confirm('¿Está seguro?')">Delete</button>

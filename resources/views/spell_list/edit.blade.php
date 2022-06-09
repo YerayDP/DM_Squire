@@ -22,11 +22,14 @@
             </ul>
         </div><br />
         @endif
-        <form method="POST" action="{{ route('event.update', $events->id) }}">
+        <form method="POST" action="{{ route('spell_list.update', $spell_list->id) }}">
         {{csrf_field()}}
         {!! method_field('put') !!}
-        <div class="col-sm-4">
-            <a href="{{ route('event.index')}}" class="btn bg-navy">Back</a>
+        
+            
+                
+<div class="col-sm-4">
+            <a href="{{ route('spell_list.index')}}" class="btn bg-navy">Back</a>
 			<button type="submit" class="btn btn-success">Create</button>
             
 </br>
@@ -34,20 +37,20 @@
 </br>
             
                 
-                <label for="name">Name:</label>
-				<input type="text" name="name" id="name" class="form-control select2 input-sm" value="{{$events->name }}">
-
-                <label for="info">Info:</label>
-				<input type="text" name="info" id="info" class="form-control select2 input-sm" value="{{ $events->info }}">
-
-				
-</br>
-</br>
-				<label for="date_start">Starting date:</label>
-				    <input type="date" name="date_start" id="date_start" class="form-control select2 input-sm" value="{{ $events->date_start}}">
-                <label for="date_end">Ending date:</label>
-				    <input type="date" name="date_end" id="date_end" class="form-control select2 input-sm" value="{{ $events->date_end }}">
-
+				<label for="PJ_id">PJ:</label>
+				<select id="PJ_id" class="form-control" name="PJ_id" style="width: 100%;">
+					@foreach($pjs as $pj)
+					<option value="{{$pj->id}}">{{$pj->name}}</option>
+					@endforeach
+				</select>
+			
+				<label for="spells_id">Spells:</label>
+				<select id="spells_id" class="form-control" name="spells_id" style="width: 100%;">
+					@foreach($spells as $spell)
+					<option value="{{$spell->id}}">{{$spell->name}}</option>
+					@endforeach
+				</select>
+                
             
             </div>
 			

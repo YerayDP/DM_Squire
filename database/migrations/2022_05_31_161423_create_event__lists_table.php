@@ -19,8 +19,8 @@ class CreateEventListsTable extends Migration
             $table->foreign('event_id')->references('id')->on('events')->onUpdate("cascade");
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate("cascade");
-            $table->integer('rate');
-            $table->string('commentary');
+            $table->integer('rate')->nullable();
+            $table->string('commentary')->nullable();
             $table->timestamps();
         });
     }

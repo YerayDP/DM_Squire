@@ -9,7 +9,7 @@
 <div class="card uper">
 	<div class="card-header">
         <h1>
-		Create Event
+		Create Weapon List
     </h1>
 	</div>
 	<div class="card-body">
@@ -22,11 +22,11 @@
 			</ul>
 		</div><br />
 		@endif
-		<form method="POST" action="{{ route('event.store') }}">
+		<form method="POST" action="{{ route('weapon_list.store') }}">
             {{csrf_field()}}
 
 			<div class="col-sm-4">
-            <a href="{{ route('event.index')}}" class="btn bg-navy">Back</a>
+            <a href="{{ route('weapon_list.index')}}" class="btn bg-navy">Back</a>
 			<button type="submit" class="btn btn-success">Create</button>
             
 </br>
@@ -34,24 +34,22 @@
 </br>
             
                 
-                <label for="name">Name:</label>
-				<input type="text" name="name" id="name" class="form-control select2 input-sm" value="{{ old('name') }}">
-
-                <label for="info">Info:</label>
-				<input type="text" name="info" id="info" class="form-control select2 input-sm" value="{{ old('info') }}">
-
-				
-</br>
-</br>
-				<label for="date_start">Starting date:</label>
-				    <input type="date" name="date_start" id="date_start" class="form-control select2 input-sm" value="{{ old('date_start') }}">
-                <label for="date_end">Ending date:</label>
-				    <input type="date" name="date_end" id="date_end" class="form-control select2 input-sm" value="{{ old('end_date') }}">
-
+				<label for="PJ_id">PJ:</label>
+				<select id="PJ_id" class="form-control" name="PJ_id" style="width: 100%;">
+					@foreach($pjs as $pj)
+					<option value="{{$pj->id}}">{{$pj->name}}</option>
+					@endforeach
+				</select>
+			
+				<label for="weapon_id">Weapons:</label>
+				<select id="weapon_id" class="form-control" name="weapon_id" style="width: 100%;">
+					@foreach($weapons as $weapon)
+					<option value="{{$weapon->id}}">{{$weapon->name}}</option>
+					@endforeach
+				</select>
+                
             
             </div>
-			
-            
            
 		</form>
 	</div>

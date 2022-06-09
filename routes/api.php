@@ -26,3 +26,7 @@ Route::get('categories', 'API\FiltroAPIController@categoryGlobalList');
 Route::get('PJs', 'API\FiltroAPIController@PJGlobalList');
 Route::post('createPJ', 'API\FiltroAPIController@createPJ');
 Route::post('deletePJ', 'API\FiltroAPIController@deletePJ');
+Route::get('events', 'API\EventsAPIController@getGlobalEvents');
+Route::post('inscribe', 'API\EventsAPIController@createEvents');
+Route::post('rate', 'API\EventsAPIController@updateEvents');
+Route::get('eventsList', 'API\EventsAPIController@getGlobalEventsList');
