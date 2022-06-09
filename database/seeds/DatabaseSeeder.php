@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         'email' => 'y@admin.com','password' => Hash::make('12345678'), 'actived' 
         => '1', 'type' => 'a']);
         factory(\App\Background::class)->create(['name' => 'BK1', 'skills_prof' => 'SK', 
-        'tools_prof' => 'TOO','languajes' => 'LAN','SE_prof' => 'SE', 
+        'tools_prof' => 'TOO','languajes' => 'LAN','SE_prof' => 'SE','traits' => 'TT'
         ]);
          
     }
