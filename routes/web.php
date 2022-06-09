@@ -28,7 +28,7 @@ Route::get('/logout', function(){
  })->name('logout');
 
 
-Route::group(['middleware' => ['auth']], function() {
+Route::group(['middleware' => ['cors']], function() {
     Route::resource('admin','UsersController');
     Route::resource('races', 'RaceController');
     Route::resource('background', 'BackgroundController');
