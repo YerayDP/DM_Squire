@@ -13,6 +13,7 @@ class CreateBackgroundsTable extends Migration
      */
     public function up()
     {
+        Schema::defaultStringLength(191);
         Schema::create('backgrounds', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
