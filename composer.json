@@ -4,6 +4,8 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    
+
     "require": {
         "php": "^7.3|^8.0",
         "fideloper/proxy": "~3.3",
@@ -13,8 +15,10 @@
         "lcobucci/jwt": "3.3.3",
         "fzaninotto/faker": "~1.4",
         "paragonie/random_compat": "2.*",
+        "fzaninotto/faker": "~1.4",
         "stevebauman/location": "^6.5"
     },
+    
     "require-dev": {
         "filp/whoops": "~2.0",
         
